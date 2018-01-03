@@ -50,6 +50,6 @@ export default function configureStore(initialState) {
     function () {
       return;
     }
-  );
+  ).purge();
   return store;
 }

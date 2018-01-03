@@ -1,4 +1,4 @@
-import {loadQuestionDetail} from 'frontend/actions/questions';
+import LoginComponent from 'frontend/pages/login/components/LoginComponent';
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 import {connect} from 'react-redux';
@@ -11,7 +11,7 @@ class LoginContainer extends Component {
         <Helmet
           title={'Log In '}
         />
-        <h3>Log In</h3>
+        <LoginComponent/>
       </div>
     )
   }
