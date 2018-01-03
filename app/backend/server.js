@@ -22,11 +22,6 @@ mongoose.connect(MONGO_URI, {useMongoClient: true});
 server.use(compression());
 server.use(bodyParser.urlencoded({extended: false}));
 server.use(bodyParser.json());
-server.use('/', router);
-server.use((err, req, res, next) => {
-  console.log(err.stack);
-  res.status(500).send("something went wrong...")
-});
 
 if (process.env.NODE_ENV === 'production') {
   server.use(Express.static(path.join(__dirname, '../..', 'public')));
@@ -59,6 +54,13 @@ if (process.env.NODE_ENV === 'production') {
 
 server.set('views', path.join(__dirname, 'views'));
 server.set('view engine', 'ejs');
+
+server.use('/', router);
+
+server.use((err, req, res, next) => {
+  console.log(err.stack);
+  res.status(500).send("something went wrong...")
+});
 
 console.log(`Server is listening to port: ${port}`);
 server.listen(port);
