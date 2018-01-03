@@ -1,0 +1,21 @@
+@import "intro";
+
+body {
+  font-family : Arial;
+}
+
+.header {
+  background-color: black;
+  height: 100px;
+  width: 100%;
+}
+
+.main {
+  min-height: 500px;
+}
+
+.footer {
+  background-color: black;
+  height: 100px;
+  width: 100%;
+}
