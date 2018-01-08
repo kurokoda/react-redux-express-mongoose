@@ -1,12 +1,13 @@
 import Promise from 'bluebird';
-import createRoutes from 'frontend/shared-fe/routes';
-import configureStore from 'frontend/shared-fe/store/configureStore';
 import {createMemoryHistory, useQueries} from 'history';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import Helmet from 'react-helmet';
 import {Provider} from 'react-redux';
 import {match, RouterContext, useRouterHistory} from 'react-router';
+//
+import createRoutes from '../../frontend/shared-fe/routes/index.js';
+import configureStore from '../../frontend/shared-fe/store/configureStore';
 
 let scriptSrcs;
 let styleSrc;
