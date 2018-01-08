@@ -1,11 +1,12 @@
-import HomeContainer from 'frontend/pages/home/containers/HomeContainer';
-import LoginContainer from 'frontend/pages/login/containers/LoginContainer';
-import QuestionContainer from 'frontend/pages/question/containers/QuestionContainer';
-import QuestionsContainer from 'frontend/pages/questions/containers/QuestionsContainer';
-import SignupContainer from 'frontend/pages/signup/containers/SignupContainer';
-import App from 'frontend/shared-fe/containers/App';
 import React from 'react';
 import {IndexRoute, Route, Router} from 'react-router';
+//
+import HomeContainer from '../../pages/home/containers/HomeContainer';
+import LoginContainer from '../../pages/login/containers/LoginContainer';
+import QuestionContainer from '../../pages/question/containers/QuestionContainer';
+import QuestionsContainer from '../../pages/questions/containers/QuestionsContainer';
+import SignupContainer from '../../pages/signup/containers/SignupContainer';
+import App from '../../shared-fe/containers/App';
 
 export default function (history) {
   return (

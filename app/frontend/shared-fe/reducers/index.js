@@ -1,7 +1,7 @@
-import auth from 'frontend/reducers/auth';
-import question from 'frontend/reducers/question';
-import questions from 'frontend/reducers/questions';
 import {combineReducers} from 'redux';
+import auth from '../reducers/auth';
+import question from '../reducers/question';
+import questions from '../reducers/questions';
 
 const rootReducer = combineReducers({
   auth,

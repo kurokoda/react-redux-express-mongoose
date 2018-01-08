@@ -1,9 +1,10 @@
-import DevTools from 'frontend/shared-fe/components/dev/DevTools';
-import Footer from 'frontend/shared-fe/components/footer';
-import Header from 'frontend/shared-fe/components/header';
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 import {connect} from 'react-redux';
+//
+import DevTools from '../../shared-fe/components/dev/DevTools';
+import Footer from '../../shared-fe/components/footer';
+import Header from '../../shared-fe/components/header';
 
 const isProduction = process.env.NODE_ENV === 'production';
 

@@ -1,4 +1,4 @@
-import {CALL_API, CHAIN_API} from 'frontend/shared-fe/middleware/api';
+import {CALL_API} from '../shared-fe/middleware/api';
 
 export const LOGIN_SUCCESS  = Symbol('LOGIN_SUCCESS');
 export const SIGNUP_SUCCESS = Symbol('SIGNUP_SUCCESS');

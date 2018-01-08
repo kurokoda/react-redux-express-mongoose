@@ -1,10 +1,11 @@
-import {PasswordInput, TextInput} from 'frontend/shared-fe/components/inputs';
-import Validation from 'frontend/shared-fe/validation';
-import {minLength, required} from 'frontend/shared-fe/validation/rules';
 import update from 'immutability-helper';
 import React, {Component} from 'react';
 import {Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
+//
+import {PasswordInput, TextInput} from '../../../shared-fe/components/inputs';
+import Validation from '../../../shared-fe/validation';
+import {minLength, required} from '../../../shared-fe/validation/rules';
 
 const fieldValidations = [
   Validation.set('username', 'Username', required, minLength(3)),

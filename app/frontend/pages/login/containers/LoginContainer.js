@@ -1,4 +1,4 @@
-import LoginComponent from 'frontend/pages/login/components/LoginComponent';
+import LoginComponent from '../../../pages/login/components/LoginComponent';
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 import {connect} from 'react-redux';

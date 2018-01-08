@@ -1,8 +1,9 @@
-import {login} from 'frontend/actions/auth';
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
+//
+import {login} from '../../../actions/auth';
 
 class HomeContainer extends Component {
   constructor(props) {

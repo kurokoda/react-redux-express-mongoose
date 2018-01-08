@@ -1,9 +1,10 @@
-import {loadQuestions} from 'frontend/actions/questions';
-import QuestionsComponent from 'frontend/pages/questions/components/QuestionsComponent';
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
+//
+import QuestionsComponent from '../../../pages/questions/components/QuestionsComponent';
+import {loadQuestions} from '../../../actions/questions';
 
 class QuestionsContainer extends Component {
   static fetchData({store}) {

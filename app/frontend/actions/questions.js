@@ -1,4 +1,4 @@
-import {CALL_API, CHAIN_API} from 'frontend/shared-fe/middleware/api';
+import {CALL_API, CHAIN_API} from '../shared-fe/middleware/api';
 
 export const LOADED_QUESTIONS       = Symbol('LOADED_QUESTIONS');
 export const LOADED_QUESTION_DETAIL = Symbol('LOADED_QUESTION_DETAIL');

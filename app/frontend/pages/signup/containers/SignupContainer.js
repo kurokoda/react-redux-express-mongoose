@@ -1,4 +1,4 @@
-import SignupComponent from 'frontend/pages/signup/components/SignupComponent';
+import SignupComponent from '../../../pages/signup/components/SignupComponent';
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 import {connect} from 'react-redux';
