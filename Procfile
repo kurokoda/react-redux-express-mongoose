@@ -1,1 +1,1 @@
-web: NODE_ENV=production NODE_PATH=./dist/server-build node dist/server-build/server
+web: NODE_ENV=production NODE_PATH=./dist/server-build node dist/server-build/backend/server
