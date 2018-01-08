@@ -1,0 +1,33 @@
+@import "./globals/colors";
+
+$logo-size : 60px;
+
+.header {
+  position         : relative;
+  background-color : $header-color;
+  height           : 100px;
+  width            : 100%;
+
+  .logo {
+    background      : url(./assets/images/coffee.png);
+    background-size : $logo-size $logo-size;
+    cursor          : pointer;
+    height          : $logo-size;
+    left            : 20px;
+    margin-top      : -30px;
+    position        : absolute;
+    top             : 50%;
+    width           : $logo-size;
+  }
+
+  .link-container {
+    position : absolute;
+    top      : 40px;
+    left     : 100px;
+    height   : 20px;
+
+    a {
+      margin-left : 10px;
+    }
+  }
+}

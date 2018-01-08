@@ -1,23 +1,34 @@
 import {loadQuestionDetail} from 'frontend/actions/questions';
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router';
+import {browserHistory, Link} from 'react-router';
 
 class Footer extends Component {
 
   render() {
+    const loggedIn = this.props.auth.get('loggedIn');
+
     return (
       <div className="header">
-        <Link to="/login">Login</Link>
-        <Link to="/logout">Logout</Link>
-        <Link to="/signup">Sign Up</Link>
+        <div className="logo" onClick={this.onLogoClick}/>
+        <div className="link-container">
+          { !loggedIn && <Link to="/login">Login</Link>}
+          { loggedIn && <Link to="#">Logout</Link>}
+          <Link to="/signup">Sign Up</Link>
+        </div>
       </div>
     )
+  }
+
+  onLogoClick() {
+    browserHistory.push('/');
   }
 }
 
 function mapStateToProps(state) {
-  return {}
+  return {
+    auth: state.auth
+  }
 }
 
 Footer.propTypes = {};

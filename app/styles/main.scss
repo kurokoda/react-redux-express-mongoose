@@ -1,21 +1,12 @@
-@import "intro";
+@import "./globals/colors";
+@import "header";
+@import "footer";
+@import "content";
 
 body {
   font-family : Arial;
 }
 
-.header {
-  background-color: black;
-  height: 100px;
-  width: 100%;
-}
-
-.main {
-  min-height: 500px;
-}
-
-.footer {
-  background-color: black;
-  height: 100px;
-  width: 100%;
+a {
+  cursor : pointer;
 }
