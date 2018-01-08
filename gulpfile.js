@@ -1,4 +1,4 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
   $ = require('gulp-load-plugins')({ camelize: true }),
   runSequence = require('run-sequence')
 
@@ -11,7 +11,7 @@ gulp.task('css', function() {
              cascade: false
            }))
            .pipe($.sourcemaps.write())
-           .pipe(gulp.dest('./dist/css'))
+           .pipe(gulp.dest('./dist'))
 })
 
 gulp.task('css:watch', ['css'], function() {
@@ -24,7 +24,7 @@ gulp.task('moveAssets', function() {
 })
 
 gulp.task('build:revAssets', ['css', 'moveAssets'], function() {
-  var rev = new $.revAll()
+  const rev = new $.revAll()
   return gulp.src('./dist/**/*')
              .pipe(rev.revision())
              .pipe(gulp.dest('./dist/public'))
@@ -37,7 +37,7 @@ gulp.task('build:cpServer', function() {
              .pipe(gulp.dest('./dist/server-build'))
 })
 gulp.task('build:revServer', ['build:cpServer'], function() {
-  var manifest = gulp.src('./dist/rev-manifest.json')
+  const manifest = gulp.src('./dist/rev-manifest.json')
   return gulp.src('./dist/server-build/{components,containers}/**/*')
              .pipe($.revReplace({ manifest: manifest }))
              .pipe(gulp.dest('./dist/server-build'))
