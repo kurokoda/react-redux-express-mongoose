@@ -1,5 +1,5 @@
 import Promise from 'bluebird';
-import createRoutes from 'frontend/shared-fe/routes/index';
+import createRoutes from 'frontend/shared-fe/routes';
 import configureStore from 'frontend/shared-fe/store/configureStore';
 import {createMemoryHistory, useQueries} from 'history';
 import React from 'react';

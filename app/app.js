@@ -1,5 +1,5 @@
 import 'babel-polyfill';
-import createRoutes from 'frontend/shared-fe/routes/index';
+import createRoutes from 'frontend/shared-fe/routes';
 import configureStore from 'frontend/shared-fe/store/configureStore';
 import Immutable from 'immutable';
 import _ from 'lodash';
