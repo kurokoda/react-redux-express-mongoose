@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'production') {
     `/${refManifest['vendor.js']}`,
     `/${refManifest['app.js']}`,
   ];
-  styleSrc        = `/${refManifest['css/main.css']}`
+  styleSrc        = `/${refManifest['main.css']}`
 } else {
   scriptSrcs = [
     '/vendor.js',

@@ -36,7 +36,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 
   server.use('/assets', Express.static(path.join(__dirname, '..', 'assets')));
-  server.use(Express.static(path.join(__dirname, '../..', 'dist/css')));
+  server.use(Express.static(path.join(__dirname, '../..', 'dist')));
   server.use(hotMiddleware);
   server.use(webpackDevMiddleware(compiler, {
     publicPath      : webpackConfig.output.publicPath,
