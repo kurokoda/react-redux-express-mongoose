@@ -20,7 +20,7 @@ export function logout() {
   return {
     [CALL_API]: {
       method     : 'get',
-      path       : '/api/login',
+      path       : '/api/logout',
       successType: LOGOUT_SUCCESS
     }
   }

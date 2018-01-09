@@ -1,17 +1,19 @@
-import LoginComponent from '../../../pages/login/components/LoginComponent';
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 import {connect} from 'react-redux';
+import {login, logout} from '../../../actions/auth';
+import LoginComponent from '../../../pages/login/components/LoginComponent';
 
 class LoginContainer extends Component {
 
   render() {
+    const loginComponentProps = {login: this.props.login, logout: this.props.logout}
     return (
       <div>
         <Helmet
           title={'Log In '}
         />
-        <LoginComponent/>
+        <LoginComponent {...loginComponentProps}/>
       </div>
     )
   }
@@ -24,4 +26,4 @@ function mapStateToProps(state) {
 LoginContainer.propTypes = {};
 
 export {LoginContainer}
-export default connect(mapStateToProps)(LoginContainer)
+export default connect(mapStateToProps, {logout, login})(LoginContainer)

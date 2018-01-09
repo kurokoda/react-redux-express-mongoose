@@ -135,7 +135,7 @@ When handling static assets, we want to achieve the following goals:
 - Make assigning assets url a no-brainer
 - Apply revision when deploying to production to integrate with CDN services easily
 
-The usage example can be found in `[Intro Container](https://github.com/mz026/universal-redux-template/blob/master/app/containers/HomeContainer.js)`
+The usage example can be found in `[Intro Container](https://github.com/mz026/universal-redux-template/blob/master/app/containers/index.js)`
 
 
 We achieve this by:
