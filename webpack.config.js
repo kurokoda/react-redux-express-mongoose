@@ -12,11 +12,19 @@ const config = {
   devtool: DEBUG ? 'cheap-module-eval-source-map' : false,
   entry  : {
     app   : ['./app/app'],
-    vendor: [
+    react: [
       'react',
+      'react-bootstrap',
+      'react-dom',
+      'react-helmet',
+      'react-redux',
       'react-router',
       'redux',
-      'react-dom',
+      'redux-devtools',
+      'redux-devtools-dock-monitor',
+      'redux-devtools-log-monitor'
+    ],
+    vendor: [
       'lodash',
       'bluebird',
       'humps',
