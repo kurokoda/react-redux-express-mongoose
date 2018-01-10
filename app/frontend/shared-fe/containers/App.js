@@ -5,6 +5,8 @@ import {connect} from 'react-redux';
 import DevTools from '../../shared-fe/components/dev/DevTools';
 import Footer from '../../shared-fe/components/footer';
 import Header from '../../shared-fe/components/header';
+import NavBar from '../../shared-fe/components/navBar';
+
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -21,7 +23,8 @@ class App extends Component {
           htmlAttributes={{"lang": "en"}}
         />
         <Header/>
-        <div className="main">
+        <NavBar/>
+        <div className="content">
           {this.props.children}
         </div>
         <Footer/>

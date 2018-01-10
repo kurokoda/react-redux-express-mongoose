@@ -3,9 +3,9 @@ import Helmet from 'react-helmet';
 import {connect} from 'react-redux';
 import NoAuth from '../../shared-fe/components/noAuth';
 //
-import HomeComponent from './HomeComponent';
+import CalendarComponent from './CalendarComponent';
 
-class HomeContainer extends Component {
+class CalendarContainer extends Component {
 
   render() {
     const loggedIn = this.props.auth.get('user');
@@ -18,9 +18,9 @@ class HomeContainer extends Component {
       return (
         <div>
           <Helmet
-            title="Home"
+            title="Calendar"
           />
-          <HomeComponent/>
+          <CalendarComponent/>
         </div>
       )
     }
@@ -33,4 +33,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, {})(HomeContainer)
+export default connect(mapStateToProps, {})(CalendarContainer)

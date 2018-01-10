@@ -1,6 +1,6 @@
-@import "./globals/colors";
+@import "../globals/colors";
 
-.footer {
+.footerComponent {
   background-color : $footer-color;
   height           : 100px;
   width            : 100%;

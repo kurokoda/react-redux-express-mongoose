@@ -15,7 +15,7 @@ class Header extends Component {
     const loggedIn = this.props.auth.get('user');
 
     return (
-      <div className="header">
+      <div className="headerComponent">
         <div className="logo" onClick={this.onLogoClick}/>
         <div className="link-container">
           { !loggedIn && <Link onClick={this.onLoginClick}>Login</Link>}

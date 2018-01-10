@@ -17,7 +17,7 @@ mongoose.connection.on('open', function () {
   console.log('Database connected');
 });
 mongoose.Promise = bluebird.Promise;
-mongoose.connect(MONGO_URI, {useMongoClient: true});
+mongoose.connect(MONGO_URI, {});
 
 server.use(compression());
 server.use(bodyParser.urlencoded({extended: false}));

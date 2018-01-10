@@ -1,8 +1,8 @@
-@import "./globals/colors";
+@import "../globals/colors";
 
 $logo-size : 60px;
 
-.header {
+.headerComponent {
   position         : relative;
   background-color : $header-color;
   height           : 100px;

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 //
-class BasicComponent extends Component {
+class TemplateComponent extends Component {
 
   render() {
     return (
@@ -14,7 +14,7 @@ function mapStateToProps(state) {
   return {};
 }
 
-BasicComponent.propTypes = {};
+TemplateComponent.propTypes = {};
 
-export {LoginComponent}
-export default connect(mapStateToProps)(BasicComponent)
+export {TemplateComponent}
+export default connect(mapStateToProps)(TemplateComponent)

@@ -1,7 +1,22 @@
+//constants
 @import "./globals/colors";
-@import "header";
-@import "footer";
-@import "content";
+
+//components
+@import "components/header";
+@import "components/footer";
+@import "components/content";
+@import "components/navBar";
+
+//pages
+@import "pages/accounting";
+@import "pages/calendar";
+@import "pages/eCommerce";
+@import "pages/email";
+@import "pages/files";
+@import "pages/home";
+@import "pages/reports";
+@import "pages/social";
+@import "pages/web";
 
 body {
   font-family : Arial;
