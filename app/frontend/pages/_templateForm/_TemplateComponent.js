@@ -3,16 +3,16 @@ import React, {Component} from 'react';
 import {Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
 //
-import {PasswordInput, TextInput} from '../../../shared-fe/components/inputs';
-import Validation from '../../../shared-fe/validation';
-import {minLength, required} from '../../../shared-fe/validation/rules';
+import {PasswordInput, TextInput} from '../../shared-fe/components/inputs';
+import Validation from '../../shared-fe/validation';
+import {minLength, required} from '../../shared-fe/validation/rules';
 
 const fieldValidations = [
   Validation.set('username', 'Username', required, minLength(3)),
   Validation.set('password', 'Password', required)
 ];
 
-class LoginComponent extends Component {
+class TemplateComponent extends Component {
 
   constructor(props) {
     super(props);
@@ -56,8 +56,8 @@ class LoginComponent extends Component {
 
   render() {
     return (
-      <div>
-        <h3>Log In</h3>
+      <div className="templateComponet">
+        <div>Template Compontent</div>
         <form onSubmit={this.handleSubmit}>
           <TextInput value={this.state.username}
                      onChange={this.onChange}
@@ -72,7 +72,6 @@ class LoginComponent extends Component {
                          errorText={this.getErrorFor('password')}
                          label='Password'
                          id='password'/>
-
           <p>
             <Button
               className="btn-block"
@@ -91,7 +90,7 @@ function mapStateToProps(state) {
   return {};
 }
 
-LoginComponent.propTypes = {};
+TemplateComponent.propTypes = {};
 
-export {LoginComponent}
-export default connect(mapStateToProps)(LoginComponent)
+export {TemplateComponent}
+export default connect(mapStateToProps)(TemplateComponent)
