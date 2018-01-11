@@ -1,20 +1,22 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import ComponentOne from './components/Component_01';
+import ComponentTwo from './components/Component_02';
+import ComponentThree from './components/Component_03';
 //
 class FilesComponent extends Component {
 
   render() {
     return (
-      <div className="filesComponent">Files</div>
+      <div className="filesComponent page">
+        <h3>Accounting</h3>
+        <ComponentOne/>
+        <ComponentTwo/>
+        <ComponentThree/>
+      </div>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {};
-}
-
 FilesComponent.propTypes = {};
 
-export {FilesComponent}
-export default connect(mapStateToProps)(FilesComponent)
+export default FilesComponent

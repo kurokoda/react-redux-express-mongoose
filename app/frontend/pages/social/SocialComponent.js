@@ -1,20 +1,22 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import ComponentOne from './components/Component_01';
+import ComponentTwo from './components/Component_02';
+import ComponentThree from './components/Component_03';
 //
 class SocialComponent extends Component {
 
   render() {
     return (
-      <div className="socialComponent">Social</div>
+      <div className="socialComponent page">
+        <h3>Accounting</h3>
+        <ComponentOne/>
+        <ComponentTwo/>
+        <ComponentThree/>
+      </div>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {};
-}
-
 SocialComponent.propTypes = {};
 
-export {SocialComponent}
-export default connect(mapStateToProps)(SocialComponent)
+export default SocialComponent

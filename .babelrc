@@ -1,8 +1,17 @@
 {
-  "presets": ["es2015", "react"],
+  "presets": [
+    "es2015",
+    "react",
+    "babel-preset-stage-2"
+  ],
+  "plugins": [
+    "transform-function-bind"
+  ],
   "env": {
     "test": {
-      "plugins": [ "babel-plugin-rewire" ]
+      "plugins": [
+        "babel-plugin-rewire"
+      ]
     }
   }
 }

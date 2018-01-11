@@ -1,12 +1,12 @@
 //constants
 @import "./globals/colors";
-
 //components
 @import "components/header";
 @import "components/footer";
-@import "components/content";
+@import "components/containers";
 @import "components/navBar";
-
+@import "components/noAuth";
+@import "components/loading";
 //pages
 @import "pages/accounting";
 @import "pages/calendar";

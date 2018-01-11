@@ -10,6 +10,7 @@ import HomePage from '../../pages/home/HomeContainer';
 import ReportsPage from '../../pages/reports/ReportsContainer';
 import SocialPage from '../../pages/social/SocialContainer';
 import WebPage from '../../pages/web/WebContainer';
+import ErrorPage from '../../shared-fe/components/error';
 import App from '../../shared-fe/containers/App';
 
 export default function (history) {
@@ -24,6 +25,7 @@ export default function (history) {
         <Route path="reports" component={ReportsPage}/>
         <Route path="social" component={SocialPage}/>
         <Route path="web" component={WebPage}/>
+        <Route path="error" component={ErrorPage}/>
         <IndexRoute component={HomePage}/>
       </Route>
     </Router>

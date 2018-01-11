@@ -1,20 +1,22 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import ComponentOne from './components/Component_01';
+import ComponentTwo from './components/Component_02';
+import ComponentThree from './components/Component_03';
 //
 class ECommerceComponent extends Component {
 
   render() {
     return (
-      <div className="eCommerceComponent">ECommerce</div>
+      <div className="eCommerceComponent page">
+        <h3>Accounting</h3>
+        <ComponentOne/>
+        <ComponentTwo/>
+        <ComponentThree/>
+      </div>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {};
-}
-
 ECommerceComponent.propTypes = {};
 
-export {ECommerceComponent}
-export default connect(mapStateToProps)(ECommerceComponent)
+export default ECommerceComponent

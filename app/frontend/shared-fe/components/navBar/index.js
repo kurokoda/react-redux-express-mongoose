@@ -4,6 +4,12 @@ import {Link} from 'react-router';
 
 class NavBar extends Component {
 
+  constructor(props) {
+    super(props);
+    this.onLinkClick = ::this.onLinkClick;
+    this.state       = {};
+  }
+
   render() {
     const links = [
       {
@@ -43,15 +49,23 @@ class NavBar extends Component {
     return (
       <div className="navBarComponent">
         {links.map((config, index) => {
-          return <Link key={index} to={config.path}>{config.label}</Link>;
+          return <Link key={index} onClick={this.onLinkClick} to={config.path}>{config.label}</Link>;
         })}
       </div>
     )
   }
+
+  onLinkClick(event) {
+    const isLoading = this.props.application.get('isLoading');
+    //
+    isLoading && event.preventDefault()
+  }
 }
 
 function mapStateToProps(state) {
-  return {}
+  return {
+    application: state.application
+  }
 }
 
 NavBar.propTypes = {};
