@@ -23,17 +23,11 @@ class App extends Component {
           ]}
           htmlAttributes={{"lang": "en"}}
         />
-        <Header/>
         <div className="app-container">
+          <Header/>
           <NavBar/>
-          {!loggedIn &&
-          <NoAuth/>
-          }
-          {loggedIn &&
-          <div className="page-container">
-            {this.props.children}
-          </div>
-          }
+          {!loggedIn && <NoAuth/>}
+          {loggedIn && <div className="page-container">{this.props.children}</div>}
         </div>
         {!isProduction && <DevTools />}
       </div>

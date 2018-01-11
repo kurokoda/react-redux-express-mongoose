@@ -1,6 +1,11 @@
 .noAuthComponent {
-  position: absolute;
-  background-color: pink;
-  width: 100%;
-  height: 100%;
+  text-align       : center;
+  position         : absolute;
+  background-color : white;
+  width            : 100%;
+  height           : 100%;
+
+  .textContainer {
+    margin-top : 150px;
+  }
 }

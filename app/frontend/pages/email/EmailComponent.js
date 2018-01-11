@@ -8,7 +8,7 @@ class EmailComponent extends Component {
   render() {
     return (
       <div className="emailComponent page">
-        <h3>Accounting</h3>
+        <span>Accounting</span>
         <ComponentOne/>
         <ComponentTwo/>
         <ComponentThree/>

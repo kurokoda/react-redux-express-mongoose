@@ -8,7 +8,7 @@ class SocialComponent extends Component {
   render() {
     return (
       <div className="socialComponent page">
-        <h3>Accounting</h3>
+        <span>Accounting</span>
         <ComponentOne/>
         <ComponentTwo/>
         <ComponentThree/>

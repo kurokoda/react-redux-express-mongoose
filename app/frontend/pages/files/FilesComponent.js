@@ -8,7 +8,7 @@ class FilesComponent extends Component {
   render() {
     return (
       <div className="filesComponent page">
-        <h3>Accounting</h3>
+        <span>Accounting</span>
         <ComponentOne/>
         <ComponentTwo/>
         <ComponentThree/>

@@ -8,7 +8,7 @@ class ECommerceComponent extends Component {
   render() {
     return (
       <div className="eCommerceComponent page">
-        <h3>Accounting</h3>
+        <span>Accounting</span>
         <ComponentOne/>
         <ComponentTwo/>
         <ComponentThree/>

@@ -11,10 +11,8 @@ router.get('/api/logout', (req, res) => {
 });
 
 router.post('/api/fetchPageData', (req, res) => {
-  const delay = 3000 + (Math.random() * 3000);
-  console.log(delay, 'delay starts');
+  const delay = 1000 + (Math.random() * 2000);
   setTimeout(() => {
-    console.log('delay ends');
     res.send({user: false});
   }, delay)
 });

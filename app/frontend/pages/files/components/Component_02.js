@@ -4,7 +4,7 @@ class ComponentTwo extends Component {
 
   render() {
     return (
-      <div className="component two">Component Two</div>
+      <div className="component two">Files Component Two</div>
     );
   }
 }

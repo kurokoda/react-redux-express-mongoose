@@ -4,7 +4,7 @@ class ComponentOne extends Component {
 
   render() {
     return (
-      <div className="component one">Accounting Component One</div>
+      <div className="component one">Files Component One</div>
     );
   }
 }

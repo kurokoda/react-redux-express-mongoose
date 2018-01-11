@@ -3,7 +3,11 @@ import React, {Component} from 'react';
 class NoAuth extends Component {
   render() {
     return (
-      <div className='noAuthComponent'>You Are Not Authorized</div>
+      <div className='noAuthComponent'>
+        <div className='textContainer'>
+          <span>You Are Not Authorized</span>
+        </div>
+      </div>
     )
   }
 }

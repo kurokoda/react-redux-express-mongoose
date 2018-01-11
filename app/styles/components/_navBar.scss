@@ -1,9 +1,10 @@
 .navBarComponent {
+  position         : absolute;
+  left             : 0;
+  height           : 100%;
+  width            : 200px;
   background-color : gray;
   color            : white;
-  width            : 200px;
-  height           : 100%;
-  position         : absolute;
 
   a {
     display : block;

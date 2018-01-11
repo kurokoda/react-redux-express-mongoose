@@ -4,7 +4,7 @@ class ComponentThree extends Component {
 
   render() {
     return (
-      <div className="component three">Accounting Component Three</div>
+      <div className="component three">Email Component Three</div>
     );
   }
 }

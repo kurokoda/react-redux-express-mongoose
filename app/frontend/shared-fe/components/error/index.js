@@ -4,7 +4,7 @@ class ErrorComponent extends Component {
   render() {
     return (
       <div className='errorComponent'>
-        <h6>ERROR PAGE</h6>
+        <span>ERROR PAGE</span>
       </div>
     )
   }
