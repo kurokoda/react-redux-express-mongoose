@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 //
 class HomeComponent extends Component {
-
   render() {
     return (
       <div className="homeComponent page">
@@ -10,7 +9,7 @@ class HomeComponent extends Component {
           <img src="/assets/images/head.png"/>
         </div>
       </div>
-    )
+    );
   }
 }
 

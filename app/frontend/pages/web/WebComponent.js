@@ -4,7 +4,6 @@ import ComponentTwo from './components/Component_02';
 import ComponentThree from './components/Component_03';
 //
 class WebComponent extends Component {
-
   render() {
     return (
       <div className="webComponent page">
@@ -19,4 +18,4 @@ class WebComponent extends Component {
 
 WebComponent.propTypes = {};
 
-export default WebComponent
+export default WebComponent;

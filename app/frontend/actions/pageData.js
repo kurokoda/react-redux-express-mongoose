@@ -15,7 +15,7 @@ export function fetchPageData(page, afterSuccess, afterError) {
       afterSuccess,
       afterError
     }
-  }
+  };
 }
 
 export function purgePageData() {

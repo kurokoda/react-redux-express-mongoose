@@ -4,7 +4,6 @@ import ComponentTwo from './components/Component_02';
 import ComponentThree from './components/Component_03';
 //
 class FilesComponent extends Component {
-
   render() {
     return (
       <div className="filesComponent page">
@@ -19,4 +18,4 @@ class FilesComponent extends Component {
 
 FilesComponent.propTypes = {};
 
-export default FilesComponent
+export default FilesComponent;

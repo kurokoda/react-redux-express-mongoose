@@ -4,16 +4,16 @@ export default ({rootDir}) => {
   watch(rootDir, {ignored: /test/, ignoreInitial: true}).on('all', (event, path) => {
     Object.keys(require.cache).forEach(function (cachedFile) {
       if (belongsToApp(cachedFile, rootDir)) {
-        delete require.cache[cachedFile]
+        delete require.cache[cachedFile];
       }
     });
-    console.log("clear server requiring cache")
-  })
-}
+    console.log('clear server requiring cache'); // eslint-disable-line no-console
+  });
+};
 
 function belongsToApp(filePath, rootDir) {
   if (filePath.includes('node_modules')) {
-    return false
+    return false;
   }
-  return filePath.includes(rootDir)
+  return filePath.includes(rootDir);
 }

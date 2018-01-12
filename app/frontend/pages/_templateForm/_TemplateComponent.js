@@ -1,4 +1,6 @@
 import update from 'immutability-helper';
+import _ from 'lodash';
+import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
@@ -13,7 +15,6 @@ const fieldValidations = [
 ];
 
 class TemplateComponent extends Component {
-
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,7 +27,9 @@ class TemplateComponent extends Component {
       password: '',
     };
 
-    this.state.validationErrors = Validation.run(this.state, fieldValidations);
+    this.state.setState({
+      validationErrors: Validation.run(this.state, fieldValidations)
+    });
   }
 
   getErrorFor(field) {
@@ -84,13 +87,15 @@ class TemplateComponent extends Component {
       </div>
     );
   }
+
+  propTypes = {
+    'onSubmit': PropTypes.func,
+  };
 }
 
 function mapStateToProps(state) {
   return {};
 }
 
-TemplateComponent.propTypes = {};
-
-export {TemplateComponent}
-export default connect(mapStateToProps)(TemplateComponent)
+export {TemplateComponent};
+export default connect(mapStateToProps)(TemplateComponent);

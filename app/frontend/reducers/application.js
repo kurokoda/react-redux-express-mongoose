@@ -11,6 +11,6 @@ export default function (state = defaultState, action) {
     case ActionType.LOADING_IS_FALSE:
       return state.merge(action.payload);
     default:
-      return state
+      return state;
   }
 }

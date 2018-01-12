@@ -13,6 +13,6 @@ export default function (state = defaultState, action) {
     case ActionType.PAGE_DATA_PURGE:
       return null;
     default:
-      return state
+      return state;
   }
 }

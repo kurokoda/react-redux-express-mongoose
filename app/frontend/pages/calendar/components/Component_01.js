@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 //
 class ComponentOne extends Component {
-
   render() {
     return (
       <div className="component one">Calendar Component One</div>
@@ -11,4 +10,4 @@ class ComponentOne extends Component {
 
 ComponentOne.propTypes = {};
 
-export default ComponentOne
+export default ComponentOne;

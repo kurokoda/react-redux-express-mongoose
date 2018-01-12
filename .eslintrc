@@ -4,9 +4,24 @@
     "babel",
     "react"
   ],
-  "env": {
-    "mocha" : true
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "google"
+  ],
   "globals": {
     "document": false,
     "expect": false,
@@ -14,5 +29,13 @@
     "sinon": false,
     "window": false
   },
-  "rules": {}
+  "rules": {
+    "comma-dangle": 0,
+    "key-spacing": 0,
+    "max-len": 0,
+    "no-multi-spaces": 0,
+    "react/no-unescaped-entities": 0,
+    "require-jsdoc": 0,
+    "space-before-function-paren": 0
+  }
 }

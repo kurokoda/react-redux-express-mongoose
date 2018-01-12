@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 
 class NavBar extends Component {
-
   constructor(props) {
     super(props);
     this.onLinkClick = ::this.onLinkClick;
@@ -52,22 +52,26 @@ class NavBar extends Component {
           return <Link key={index} onClick={this.onLinkClick} to={config.path}>{config.label}</Link>;
         })}
       </div>
-    )
+    );
   }
+
+  propTypes = {
+    'application': ImmutablePropTypes.map,
+  };
 
   onLinkClick(event) {
     const isLoading = this.props.application.get('isLoading');
     //
-    isLoading && event.preventDefault()
+    isLoading && event.preventDefault();
   }
 }
 
 function mapStateToProps(state) {
   return {
     application: state.application
-  }
+  };
 }
 
 NavBar.propTypes = {};
 
-export default connect(mapStateToProps, {})(NavBar)
+export default connect(mapStateToProps, {})(NavBar);

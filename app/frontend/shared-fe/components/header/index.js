@@ -1,10 +1,12 @@
+import PropTypes from 'prop-types';
 import React, {Component} from 'react';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 import {connect} from 'react-redux';
 import {browserHistory, Link} from 'react-router';
 import {login, logout} from '../../../actions/auth';
 
-class Header extends Component {
 
+class Header extends Component {
   constructor(props) {
     super(props);
     this.onLoginClick  = this.onLoginClick.bind(this);
@@ -22,33 +24,36 @@ class Header extends Component {
           { loggedIn && <Link onClick={this.onLogoutClick}>Logout</Link>}
         </div>
       </div>
-    )
+    );
   }
 
   onLoginClick() {
-    console.log('login');
     this.props.login();
   }
 
   onLogoutClick() {
-    console.log('logout');
     this.props.logout();
   }
 
   onLogoClick() {
     browserHistory.push('/');
   }
+
+  propTypes = {
+    'auth'       : ImmutablePropTypes.map.isRequired,
+    //
+    'logout'     : PropTypes.func,
+    'login'      : PropTypes.func,
+  };
 }
 
 function mapStateToProps(state) {
   return {
     auth: state.auth
-  }
+  };
 }
-
-Header.propTypes = {};
 
 export default connect(mapStateToProps, {
   login,
   logout
-})(Header)
+})(Header);

@@ -4,7 +4,6 @@ import ComponentTwo from './components/Component_02';
 import ComponentThree from './components/Component_03';
 //
 class CalendarComponent extends Component {
-
   render() {
     return (
       <div className="calendarComponent page">
@@ -19,4 +18,4 @@ class CalendarComponent extends Component {
 
 CalendarComponent.propTypes = {};
 
-export default CalendarComponent
+export default CalendarComponent;

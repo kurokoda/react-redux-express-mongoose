@@ -1,6 +1,9 @@
+import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 import {connect} from 'react-redux';
+import {browserHistory} from 'react-router';
 //
 import {fetchPageData, purgePageData} from '../../actions/pageData';
 import Loading from '../../shared-fe/components/loading';
@@ -8,7 +11,6 @@ import SocialComponent from './SocialComponent';
 
 
 class SocialContainer extends Component {
-
   constructor(props) {
     super(props);
     this.onFetchPageDataSuccess = ::this.onFetchPageDataSuccess;
@@ -18,11 +20,11 @@ class SocialContainer extends Component {
 
   componentDidMount() {
     this.props.fetchPageData('social', this.onFetchPageDataSuccess, this.onFetchPageDataFailure);
-  };
+  }
 
   componentWillUnmount() {
     this.props.purgePageData();
-  };
+  }
 
   render() {
     const data = this.props.pageData;
@@ -30,7 +32,7 @@ class SocialContainer extends Component {
     if (!data) {
       return (
         <Loading/>
-      )
+      );
     } else {
       return (
         <div>
@@ -39,7 +41,7 @@ class SocialContainer extends Component {
           />
           <SocialComponent/>
         </div>
-      )
+      );
     }
   }
 
@@ -52,15 +54,22 @@ class SocialContainer extends Component {
   onFetchPageDataFailure() {
     browserHistory.push('/error');
   }
+
+  propTypes = {
+    'pageData'     : ImmutablePropTypes.map,
+    //
+    'purgePageData': PropTypes.func,
+    'fetchPageData': PropTypes.func,
+  };
 }
 
 function mapStateToProps(state) {
   return {
     pageData: state.pageData
-  }
+  };
 }
 
 export default connect(mapStateToProps, {
   fetchPageData,
   purgePageData
-})(SocialContainer)
+})(SocialContainer);

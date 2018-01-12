@@ -10,4 +10,4 @@ const rootReducer = combineReducers({
   pageData
 });
 
-export default rootReducer
+export default rootReducer;

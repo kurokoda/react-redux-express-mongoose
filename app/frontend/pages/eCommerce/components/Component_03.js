@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 //
 class ComponentThree extends Component {
-
   render() {
     return (
       <div className="component three">ECommerce Accounting Component Three</div>
@@ -11,4 +10,4 @@ class ComponentThree extends Component {
 
 ComponentThree.propTypes = {};
 
-export default ComponentThree
+export default ComponentThree;

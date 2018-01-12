@@ -13,7 +13,7 @@ export function login(username, password) {
       body       : {username, password},
       successType: LOGIN_SUCCESS
     }
-  }
+  };
 }
 
 export function logout() {
@@ -23,7 +23,7 @@ export function logout() {
       path       : '/api/logout',
       successType: LOGOUT_SUCCESS
     }
-  }
+  };
 }
 
 export function signup(username, password) {
@@ -34,5 +34,5 @@ export function signup(username, password) {
       body       : {username, password},
       successType: SIGNUP_SUCCESS
     }
-  }
+  };
 }

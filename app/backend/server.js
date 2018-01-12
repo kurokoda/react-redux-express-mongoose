@@ -14,7 +14,7 @@ const port      = process.env.PORT || 3000;
 const MONGO_URI = 'mongodb://heroku_tzsj43z0:v7f2hvfq8eaqhd84v44t2bt4ef@ds033186.mlab.com:33186/heroku_tzsj43z0';
 
 mongoose.connection.on('open', function () {
-  console.log('Database connected');
+  console.log('Database connected'); // eslint-disable-line no-console
 });
 mongoose.Promise = bluebird.Promise;
 mongoose.connect(MONGO_URI, {});
@@ -49,7 +49,7 @@ if (process.env.NODE_ENV === 'production') {
     }
   }));
 
-  clearRequireCacheOnChange({rootDir: path.join(__dirname, '..')})
+  clearRequireCacheOnChange({rootDir: path.join(__dirname, '..')});
 }
 
 server.set('views', path.join(__dirname, 'views'));
@@ -58,9 +58,9 @@ server.set('view engine', 'ejs');
 server.use('/', router);
 
 server.use((err, req, res, next) => {
-  console.log(err.stack);
-  res.status(500).send("something went wrong...")
+  console.log(err.stack);  // eslint-disable-line no-console
+  res.status(500).send('something went wrong...');
 });
 
-console.log(`Server is listening to port: ${port}`);
+console.log(`Server is listening to port: ${port}`);  // eslint-disable-line no-console
 server.listen(port);

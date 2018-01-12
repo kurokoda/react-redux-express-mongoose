@@ -4,7 +4,6 @@ import ComponentTwo from './components/Component_02';
 import ComponentThree from './components/Component_03';
 //
 class ReportsComponent extends Component {
-
   render() {
     return (
       <div className="reportsComponent page">
@@ -19,4 +18,4 @@ class ReportsComponent extends Component {
 
 ReportsComponent.propTypes = {};
 
-export default ReportsComponent
+export default ReportsComponent;

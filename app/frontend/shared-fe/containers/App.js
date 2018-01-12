@@ -1,5 +1,7 @@
+import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 import {connect} from 'react-redux';
 //
 import DevTools from '../../shared-fe/components/dev/DevTools';
@@ -19,9 +21,9 @@ class App extends Component {
           defaultTitle="Redux real-world example"
           titleTemplate="%s - Redux real-world example"
           meta={[
-            {"name": "description", "content": "A boilerplate doing universal/isomorphic rendering with Redux + React-router + Express"},
+            {'name': 'description', 'content': 'A boilerplate doing universal/isomorphic rendering with Redux + React-router + Express'},
           ]}
-          htmlAttributes={{"lang": "en"}}
+          htmlAttributes={{'lang': 'en'}}
         />
         <div className="app-container">
           <Header/>
@@ -31,14 +33,19 @@ class App extends Component {
         </div>
         {!isProduction && <DevTools />}
       </div>
-    )
+    );
   }
+
+  propTypes = {
+    'auth'    : ImmutablePropTypes.map.isRequired,
+    'children': PropTypes.array.isRequired,
+  };
 }
 
 function mapStateToProps(state) {
   return {
     auth: state.auth
-  }
+  };
 }
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps)(App);

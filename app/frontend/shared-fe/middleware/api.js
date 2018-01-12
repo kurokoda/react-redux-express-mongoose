@@ -1,4 +1,4 @@
-import Promise, {using} from 'bluebird';
+import Promise from 'bluebird';
 import {camelizeKeys} from 'humps';
 import _ from 'lodash';
 import superAgent from 'superagent';
@@ -7,38 +7,38 @@ import config from '../../../shared-app/config';
 export const CALL_API  = Symbol('CALL_API');
 export const CHAIN_API = Symbol('CHAIN_API');
 
-export default ({dispatch, getState}) => next => action => {
+export default ({dispatch, getState}) => (next) => (action) => {
   if (action[CALL_API]) {
     return dispatch({
       [CHAIN_API]: [
         () => action
       ]
-    })
+    });
   }
 
   let deferred = Promise.defer();
 
   if (!action[CHAIN_API]) {
-    return next(action)
+    return next(action);
   }
 
   let promiseCreators = action[CHAIN_API].map((apiActionCreator) => {
-    return createRequestPromise(apiActionCreator, next, getState, dispatch)
-  })
+    return createRequestPromise(apiActionCreator, next, getState, dispatch);
+  });
 
   let overall = promiseCreators.reduce((promise, creator) => {
     return promise.then((body) => {
-      return creator(body)
-    })
-  }, Promise.resolve())
+      return creator(body);
+    });
+  }, Promise.resolve());
 
   overall.finally(() => {
-    deferred.resolve()
+    deferred.resolve();
   }).catch(() => {
-  })
+  });
 
-  return deferred.promise
-}
+  return deferred.promise;
+};
 
 function actionWith(action, toMerge) {
   let ret = Object.assign({}, action, toMerge);
@@ -49,7 +49,7 @@ function actionWith(action, toMerge) {
 function createRequestPromise(apiActionCreator, next, getState, dispatch) {
   return (prevBody) => {
     let apiAction = apiActionCreator(prevBody);
-    let deferred  = Promise.defer()
+    let deferred  = Promise.defer();
     let params    = extractParams(apiAction[CALL_API]);
 
     superAgent[params.method](params.url)
@@ -61,29 +61,29 @@ function createRequestPromise(apiActionCreator, next, getState, dispatch) {
           dispatch(actionWith(apiAction, {
             type : params.errorType,
             error: err
-          }))
+          }));
         }
 
         if (_.isFunction(params.afterError)) {
-          params.afterError({getState})
+          params.afterError({getState});
         }
-        deferred.reject()
+        deferred.reject();
       } else {
-        let resBody = camelizeKeys(res.body)
+        let resBody = camelizeKeys(res.body);
         dispatch(actionWith(apiAction, {
           type    : params.successType,
           response: resBody
         }));
 
         if (_.isFunction(params.afterSuccess)) {
-          params.afterSuccess({getState})
+          params.afterSuccess({getState});
         }
-        deferred.resolve(resBody)
+        deferred.resolve(resBody);
       }
     });
 
-    return deferred.promise
-  }
+    return deferred.promise;
+  };
 }
 
 function extractParams(callApi) {
@@ -96,7 +96,7 @@ function extractParams(callApi) {
         errorType,
         afterSuccess,
         afterError
-      } = callApi
+      } = callApi;
 
   let url = `${config.API_BASE_URL}${path}`;
 
@@ -109,5 +109,5 @@ function extractParams(callApi) {
     errorType,
     afterSuccess,
     afterError
-  }
+  };
 }

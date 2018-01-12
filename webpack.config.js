@@ -1,11 +1,12 @@
 const path         = require('path');
 const webpack      = require('webpack');
-const AssetsPlugin = require('assets-webpack-plugin');
+
+require('assets-webpack-plugin');
 
 const DEBUG = !(process.env.NODE_ENV === 'production');
 
 if (DEBUG) {
-  require('dotenv').config()
+  require('dotenv').config();
 }
 
 const config = {
@@ -72,7 +73,7 @@ if (DEBUG) {
     loader : 'react-hot-loader',
     exclude: /node_modules/,
     include: __dirname
-  })
+  });
 } else {
   config.plugins = config.plugins.concat([
     new webpack.optimize.CommonsChunkPlugin({
@@ -80,7 +81,7 @@ if (DEBUG) {
       filname: '[name].[chunkhash].js'
     }),
     new webpack.optimize.UglifyJsPlugin(),
-  ])
+  ]);
 }
 
 module.exports = config;

@@ -13,7 +13,7 @@ import WebPage from '../../pages/web/WebContainer';
 import ErrorPage from '../../shared-fe/components/error';
 import App from '../../shared-fe/containers/App';
 
-export default function (history) {
+const routes = (history) => {
   return (
     <Router history={history}>
       <Route path="/" component={App}>
@@ -29,5 +29,7 @@ export default function (history) {
         <IndexRoute component={HomePage}/>
       </Route>
     </Router>
-  )
-}
+  );
+};
+
+export default routes;

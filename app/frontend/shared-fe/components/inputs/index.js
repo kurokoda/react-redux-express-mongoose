@@ -1,5 +1,7 @@
+import PropTypes from 'prop-types';
 import React, {Component} from 'react';
-import {ControlLabel, FieldGroup, FormControl} from 'react-bootstrap';
+
+import {ControlLabel, FormControl} from 'react-bootstrap';
 
 export class PasswordInput extends Component {
   render() {
@@ -20,6 +22,18 @@ export class PasswordInput extends Component {
       </div>
     );
   }
+
+  propTypes = {
+    'id'         : PropTypes.string.isRequired,
+    'label'      : PropTypes.string.isRequired,
+    'value'      : PropTypes.string.isRequired,
+    'className'  : PropTypes.string,
+    'placeholder': PropTypes.string,
+    'errorText'  : PropTypes.string,
+    'showError'  : PropTypes.bool,
+    //
+    'onChange'   : PropTypes.func,
+  };
 }
 
 export class TextInput extends Component {
@@ -42,6 +56,18 @@ export class TextInput extends Component {
       </div>
     );
   }
+
+  propTypes = {
+    'id'         : PropTypes.string.isRequired,
+    'label'      : PropTypes.string.isRequired,
+    'value'      : PropTypes.string.isRequired,
+    'className'  : PropTypes.string,
+    'placeholder': PropTypes.string,
+    'errorText'  : PropTypes.string,
+    'showError'  : PropTypes.bool,
+    //
+    'onChange'   : PropTypes.func,
+  };
 }
 
 export class EmailInput extends Component {
@@ -64,4 +90,16 @@ export class EmailInput extends Component {
       </div>
     );
   }
+
+  propTypes = {
+    'id'         : PropTypes.string.isRequired,
+    'label'      : PropTypes.string.isRequired,
+    'value'      : PropTypes.string.isRequired,
+    'className'  : PropTypes.string,
+    'placeholder': PropTypes.string,
+    'errorText'  : PropTypes.string,
+    'showError'  : PropTypes.bool,
+    //
+    'onChange'   : PropTypes.func,
+  };
 }

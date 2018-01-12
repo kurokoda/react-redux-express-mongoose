@@ -8,8 +8,8 @@ class NoAuth extends Component {
           <span>You Are Not Authorized</span>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default NoAuth
+export default NoAuth;

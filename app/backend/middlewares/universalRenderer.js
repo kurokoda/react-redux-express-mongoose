@@ -18,13 +18,13 @@ if (process.env.NODE_ENV === 'production') {
     `/${refManifest['vendor.js']}`,
     `/${refManifest['app.js']}`,
   ];
-  styleSrc        = `/${refManifest['main.css']}`
+  styleSrc        = `/${refManifest['main.css']}`;
 } else {
   scriptSrcs = [
     '/vendor.js',
     '/app.js'
   ];
-  styleSrc   = '/main.css'
+  styleSrc   = '/main.css';
 }
 
 export default (req, res, next) => {
@@ -35,16 +35,16 @@ export default (req, res, next) => {
 
   match({routes, location}, (error, redirectLocation, renderProps) => {
     if (redirectLocation) {
-      res.redirect(301, redirectLocation.pathname + redirectLocation.search)
+      res.redirect(301, redirectLocation.pathname + redirectLocation.search);
     } else if (error) {
-      res.status(500).send(error.message)
+      res.status(500).send(error.message);
     } else if (!renderProps) {
-      res.status(404).send('Not found')
+      res.status(404).send('Not found');
     } else {
       let [getCurrentUrl, unsubscribe] = subscribeUrl();
       let reqUrl                       = location.pathname + location.search;
 
-      getReduxPromise().then(() => {
+      getReduxPromise(renderProps).then(() => {
         let reduxState = escape(JSON.stringify(store.getState()));
         let metaHeader = Helmet.rewind();
         let html       = ReactDOMServer.renderToString(
@@ -53,9 +53,9 @@ export default (req, res, next) => {
           </Provider>
         );
         if (getCurrentUrl() === reqUrl) {
-          res.render('index', {metaHeader, html, scriptSrcs, reduxState: null, styleSrc})
+          res.render('index', {metaHeader, html, scriptSrcs, reduxState, styleSrc});
         } else {
-          res.redirect(302, getCurrentUrl())
+          res.redirect(302, getCurrentUrl());
         }
         unsubscribe();
       })
@@ -64,25 +64,27 @@ export default (req, res, next) => {
         unsubscribe();
         next(err);
       });
-      function getReduxPromise() {
-        let {query, params} = renderProps;
-        let comp            = renderProps.components[renderProps.components.length - 1].WrappedComponent;
-        return comp.fetchData ?
-          comp.fetchData({query, params, store, history}) :
-          Promise.resolve();
-      }
     }
   });
+
+  function getReduxPromise(renderProps) {
+    let {query, params} = renderProps;
+    let comp            = renderProps.components[renderProps.components.length - 1].WrappedComponent;
+    return comp.fetchData ?
+      comp.fetchData({query, params, store, history}) :
+      Promise.resolve();
+  }
+
   function subscribeUrl() {
     let currentUrl  = location.pathname + location.search;
     let unsubscribe = history.listen((newLoc) => {
       if (newLoc.action === 'PUSH' || newLoc.action === 'REPLACE') {
-        currentUrl = newLoc.pathname + newLoc.search
+        currentUrl = newLoc.pathname + newLoc.search;
       }
     });
     return [
       () => currentUrl,
       unsubscribe
-    ]
+    ];
   }
-}
+};

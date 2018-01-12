@@ -1,6 +1,6 @@
-import Express from 'express';
+import {Router} from 'express';
 
-const router = Express.Router();
+const router = new Router();
 
 router.post('/api/login', (req, res) => {
   res.send({user: true});
@@ -14,11 +14,11 @@ router.post('/api/fetchPageData', (req, res) => {
   const delay = 1000 + (Math.random() * 2000);
   setTimeout(() => {
     res.send({user: false});
-  }, delay)
+  }, delay);
 });
 
 router.get('*', (req, res, next) => {
-  require('../middlewares/universalRenderer').default(req, res, next)
+  require('../middlewares/universalRenderer').default(req, res, next);
 });
 
 export default router;

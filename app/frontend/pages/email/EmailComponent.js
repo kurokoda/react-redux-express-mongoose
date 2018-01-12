@@ -4,7 +4,6 @@ import ComponentTwo from './components/Component_02';
 import ComponentThree from './components/Component_03';
 //
 class EmailComponent extends Component {
-
   render() {
     return (
       <div className="emailComponent page">
@@ -19,4 +18,4 @@ class EmailComponent extends Component {
 
 EmailComponent.propTypes = {};
 
-export default EmailComponent
+export default EmailComponent;

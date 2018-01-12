@@ -11,6 +11,6 @@ export default function (state = defaultState, action) {
     case ActionType.LOGOUT_SUCCESS:
       return state.merge(action.response);
     default:
-      return state
+      return state;
   }
 }

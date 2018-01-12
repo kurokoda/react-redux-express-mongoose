@@ -1,5 +1,7 @@
+import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 import {connect} from 'react-redux';
 import {browserHistory} from 'react-router';
 //
@@ -9,7 +11,6 @@ import AccountingComponent from './AccountingComponent';
 
 
 class AccountingContainer extends Component {
-
   constructor(props) {
     super(props);
     this.onFetchPageDataSuccess = ::this.onFetchPageDataSuccess;
@@ -19,11 +20,11 @@ class AccountingContainer extends Component {
 
   componentDidMount() {
     this.props.fetchPageData('accounting', this.onFetchPageDataSuccess, this.onFetchPageDataFailure);
-  };
+  }
 
   componentWillUnmount() {
     this.props.purgePageData();
-  };
+  }
 
   render() {
     const data = this.props.pageData;
@@ -31,7 +32,7 @@ class AccountingContainer extends Component {
     if (!data) {
       return (
         <Loading/>
-      )
+      );
     } else {
       return (
         <div>
@@ -40,7 +41,7 @@ class AccountingContainer extends Component {
           />
           <AccountingComponent/>
         </div>
-      )
+      );
     }
   }
 
@@ -53,15 +54,22 @@ class AccountingContainer extends Component {
   onFetchPageDataFailure() {
     browserHistory.push('/error');
   }
+
+  propTypes = {
+    'pageData'     : ImmutablePropTypes.map,
+    //
+    'purgePageData': PropTypes.func,
+    'fetchPageData': PropTypes.func,
+  };
 }
 
 function mapStateToProps(state) {
   return {
     pageData: state.pageData
-  }
+  };
 }
 
 export default connect(mapStateToProps, {
   fetchPageData,
   purgePageData
-})(AccountingContainer)
+})(AccountingContainer);

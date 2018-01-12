@@ -4,9 +4,8 @@ import {connect} from 'react-redux';
 import TemplateComponent from './_TemplateComponent';
 
 class TemplateContainer extends Component {
-
   render() {
-    const componentProps = {}
+    const componentProps = {};
     return (
       <div className="templateContainer">
         <Helmet
@@ -14,7 +13,7 @@ class TemplateContainer extends Component {
         />
         <TemplateComponent {...componentProps}/>
       </div>
-    )
+    );
   }
 }
 
@@ -24,5 +23,5 @@ function mapStateToProps(state) {
 
 TemplateContainer.propTypes = {};
 
-export {TemplateContainer}
-export default connect(mapStateToProps, {})(TemplateContainer)
+export {TemplateContainer};
+export default connect(mapStateToProps, {})(TemplateContainer);

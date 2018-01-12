@@ -4,7 +4,6 @@ import ComponentTwo from './components/Component_02';
 import ComponentThree from './components/Component_03';
 //
 class AccountingComponent extends Component {
-
   render() {
     return (
       <div className="accountingComponent page">
@@ -19,4 +18,4 @@ class AccountingComponent extends Component {
 
 AccountingComponent.propTypes = {};
 
-export default AccountingComponent
+export default AccountingComponent;

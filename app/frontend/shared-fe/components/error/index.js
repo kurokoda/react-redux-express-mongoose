@@ -6,7 +6,7 @@ class ErrorComponent extends Component {
       <div className='errorComponent'>
         <span>ERROR PAGE</span>
       </div>
-    )
+    );
   }
 }
 
